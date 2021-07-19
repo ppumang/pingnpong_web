@@ -8,6 +8,19 @@
     <link rel="shortcut icon" href="/images/pingnpong_purple.ico" />
 </head>
 <style>
+    body {
+        background-color: #8a00ff; padding-left: 5%; padding-right: 5%;
+    }
+    .desc-container {
+        margin-bottom: 50px;
+    }
+    .desc-title {
+        font-size: xx-large; 
+        line-height: 50px;
+    }
+    .desc-content {
+        font-size: large;
+    }
     .google-play-button {
         cursor: pointer;
         box-shadow: mintcream;
@@ -17,23 +30,83 @@
     .google-play-button:hover {
         box-shadow: 0 0 10px 2px;
     }
+
+    @media screen and (min-width: 780px){
+        .logo-container {
+            text-align: center; margin-bottom: 50px;
+        }
+        .content-container {
+            display: flex; 
+            justify-content: center;
+        }
+        .content1-container {
+            flex-grow: 1; 
+            width: 30%; 
+            text-align: center;
+            font-family: monospace;
+            font-weight: bold; 
+            color: mintcream;
+        }
+        .content2-container {
+            flex-grow: 1; 
+            width: 70%;
+            display: flex;
+            text-align: center;
+        }
+        .image-phone {
+            width: 25%;
+        }
+        .image-phone2 {
+            margin-left: -3vw;
+        }
+        .image-phone3 {
+            margin-left: -3vw;
+        }
+        .image-phone4 {
+            margin-left: -3vw;
+        }
+    }
+    @media screen and (max-width: 780px) {
+        .logo-container {
+            text-align: center;
+        }        
+        .content-container {
+            display: flex;
+            flex-direction: column;
+        }
+        .content1-container {
+            text-align: center;
+            font-family: monospace;
+            font-weight: bold; 
+            color: mintcream;
+        }
+        .content2-container {
+            text-align: center;
+        }
+        .google-play-button {
+            margin-bottom: 40px;
+        }
+    }
 </style>
-<body style="background-color: #8a00ff; padding-left: 5%; padding-right: 5%;">
-    <div style="text-align: center; margin-bottom: 50px;">
+<body>
+    <div class="logo-container">
         <img src="/images/logo_with_text.png" />
     </div>
-    <div style="display: flex; justify-content: center;">
-        <div style="flex-grow: 1; width: 30%; text-align: center;font-family: monospace;font-weight: bold; color: mintcream;">
-            <div style="margin-bottom: 50px;">
-                <p style="font-size: xx-large; line-height: 50px;">본격 전국민 <br/> 부수통합 프로젝트<br/> 핑앤퐁</p>
-                <p style="font-size: large;">탁구 게임 전적을 앱에 기록하고</p>
-                <p style="font-size: large;">레이팅으로 자신의 실력을 확인해보세요</p>
+    <div class="content-container">
+        <div class="content1-container">
+            <div class="desc-container">
+                <p class="desc-title">본격 전국민 <br/> 부수통합 프로젝트<br/> 핑앤퐁</p>
+                <p class="desc-content">탁구 게임 전적을 앱에 기록하고</p>
+                <p class="desc-content">레이팅으로 자신의 실력을 확인해보세요</p>
             </div>
             <img src="/images/google_play_logo.png" width="70%" class="google-play-button" />
         </div>
-        <div style="flex-grow: 1; width: 70%;">
-            <img src="/images/phone_merged.png" width="100%"/>
+        <div class="content2-container">
+            <img src="/images/phone1.png" class="image-phone image-phone1"/>
+            <img src="/images/phone2.png" class="image-phone image-phone2"/>
+            <img src="/images/phone3.png" class="image-phone image-phone3"/>
+            <img src="/images/phone4.png" class="image-phone image-phone4"/>
         </div>
     </div>
-</body>
+</bod>
 </html>
