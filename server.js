@@ -13,6 +13,6 @@ app.use(express.static('public'))
 //     res.sendFile(path.join(__dirname, "hi.html"));
 // })
 
-app.listen(3001, (req,res) => {
-    console.log("listening on port 3001")
+app.listen(3000, (req,res) => {
+    console.log("listening on port 3000")
 })
