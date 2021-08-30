@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      네이버 지도 api 예제 : 간단 예제 : 클릭한 위치 위도·경도 보기 (클릭 이벤트
+      적용)
+    </title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  </head>
+  <body>
+    <!-- 예제 시작 -->
+
+    <!-- 사용한 지도 Client ID : mn7cwsrvym 은 "localhost" 에서 테스트 용도로 사용할 수 있습니다. -->
+    <script src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=z4zsnslhe1"></script>
+
+    <!-- 지도가 생성되는 div 영역, id 는 naverMap 으로 설정 -->
+    <div
+      id="naverMap"
+      style="margin: 0 auto; width: 1000px; max-width: 100%; height: 650px"
+    ></div>
+
+    <div style="text-align: center; margin-top: 10px">
+      위도 : <input type="text" id="input_lat" /> 경도 :
+      <input type="text" id="input_lng" />
+      <button id="searchBtn">검색</button>
+    </div>
+
+    <div style="text-align: center; margin-top: 10px">
+      클릭한 곳 위도 : <input type="text" name="namp_lat" /> 클릭한 곳 경도 :
+      <input type="text" name="namp_lng" />
+    </div>
+
+    <script>
+      var nmap = new naver.maps.Map("naverMap", {
+        // naverMap 값은 div 의 id 값
+        center: new naver.maps.LatLng(37.5782709, 126.9770043), // 지도 중앙 위치 : 위도, 경도 설정
+        zoom: 1, // 줌 설정 : 1~14, 수치가 클수록 지도 확대(줌인), 이 옵션 생략시 기본값 9
+        zoomControl: true, // 줌 컨트롤 표시 (기본값 표시안함)
+        zoomControlOptions: {
+          // 줌 컨트롤 오른쪽 위로 위치 설정
+          position: naver.maps.Position.TOP_RIGHT, // 오른쪽 위로 설정값
+        },
+        mapTypeControl: true, // 일반ㆍ위성 지도보기 컨트롤 표시 (기본값 표시안함)
+      });
+
+      var marker = new naver.maps.Marker({
+        position: new naver.maps.LatLng(37.5782709, 126.9770043),
+        map: nmap,
+      });
+
+      naver.maps.Event.addListener(nmap, "click", function (e) {
+        // 제이쿼리 사용
+        $("[name=namp_lat]").val(e.coord.lat()); // 위도
+        $("[name=namp_lng]").val(e.coord.lng()); // 경도
+
+        marker.setPosition(e.latlng);
+      });
+
+      document
+        .getElementById("searchBtn")
+        .addEventListener("click", function (e) {
+          console.log("click");
+          let lat = Number(document.getElementById("input_lat").value);
+          let lng = Number(document.getElementById("input_lng").value);
+          console.log(lat, lng);
+          var pos = new naver.maps.LatLng(lat, lng);
+          e.preventDefault();
+          nmap.setCenter(pos);
+          marker.setPosition(pos);
+        });
+    </script>
+
+    <!-- 예제 종료 -->
+  </body>
+</html>
