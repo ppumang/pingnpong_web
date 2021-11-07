@@ -4,7 +4,7 @@ const path = require("path");
 const fs = require("fs");
 
 app.get("/", (req,res) => {
-    res.sendFile(path.join(__dirname, "index.html"));
+    res.sendFile(path.join(__dirname, "main_version2.html"));
 })
 
 app.use(express.static('public'))

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>1등 탁구 앱 핑앤퐁</title>
+    <meta name="description" content="탁구전적 기록, 탁구레이팅 앱 핑앤퐁" />
+    <meta
+      name="keywords"
+      content="핑앤퐁, pingnpong, 탁구, 탁구앱, 탁구 레이팅, 탁구레이팅, 탁구시합, 탁구 시합"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="1등 탁구 앱 핑앤퐁" />
+    <meta
+      property="og:description"
+      content="탁구시합 결과 기록, 탁구전적 기록, 탁구레이팅 앱 핑앤퐁"
+    />
+    <meta
+      property="og:image"
+      content="https://pingnpong.s3.ap-northeast-2.amazonaws.com/public/pingnpong.png"
+    />
+    <meta property="og:url" content="pingnpong.com" />
+
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:title" content="1등 탁구 앱 핑앤퐁" />
+    <meta
+      property="twitter:description"
+      content="탁구시합 결과 기록, 탁구전적 기록, 탁구레이팅 앱 핑앤퐁"
+    />
+    <meta
+      property="twitter:image"
+      content="https://pingnpong.s3.ap-northeast-2.amazonaws.com/public/pingnpong.png"
+    />
+    <link rel="shortcut icon" href="/images/pingnpong_purple.ico" />
+
+    <meta
+      name="naver-site-verification"
+      content="e4d5a1a41fa4b0c3e880a34c228181b1368122c2"
+    />
+  </head>
+  <style>
+    body {
+      background-color: #8a00ff;
+    }
+    .theme-color {
+      background-color: #8a00ff;
+    }
+    .dodgerblue {
+      background-color: dodgerblue;
+    }
+    .orangered {
+      background-color: orangered;
+    }
+    .gold {
+      background-color: #deb60e;
+    }
+    .mint {
+      background-color: #89e6dd;
+    }
+    .font-theme-color {
+      color: #8a00ff;
+    }
+    .flex-row {
+      display: flex;
+    }
+    .flex-grow1 {
+      flex-grow: 1;
+    }
+    .space-between {
+      justify-content: space-between;
+    }
+    .store-button {
+      cursor: pointer;
+      box-shadow: mintcream;
+      border-radius: 10px;
+      background-color: #fff;
+      margin: 5px;
+    }
+    .store-button:hover {
+      box-shadow: 0 0 10px 2px;
+    }
+
+    @media screen and (min-width: 780px) {
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      .logo-container {
+        text-align: left;
+        position: fixed;
+        left: 20%;
+        top: 5%;
+      }
+      .app_download_container {
+        display: none;
+      }
+      .section-container {
+        width: 100%;
+        height: 100vh;
+      }
+      .wrapper-padding-side {
+        padding-right: 20%;
+        padding-left: 20%;
+      }
+      .wrapper-padding-top {
+        padding-top: 20%;
+      }
+      .content-container {
+        display: flex;
+        flex-direction: column;
+      }
+      .desc-big {
+        font-size: 35px;
+        line-height: 5rem;
+        font-family: monospace;
+        font-weight: bold;
+      }
+      .font-white {
+        color: #fff;
+      }
+      .desc-middle {
+        font-size: 25px;
+        line-height: 3rem;
+        font-family: monospace;
+        font-weight: bold;
+      }
+      .image-screen {
+        position: fixed;
+        right: 20%;
+        top: 5vh;
+        height: 90vh;
+        opacity: 0;
+      }
+      .image-visible {
+        opacity: 1;
+      }
+    }
+    @media screen and (max-width: 780px) {
+      body {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+      .logo-container {
+        text-align: left;
+      }
+    }
+  </style>
+  <body>
+    <div class="logo-container">
+      <img src="/images/logo_with_text.png" />
+    </div>
+    <div class="section-container">
+      <div class="wrapper-padding-side flex-row space-between">
+        <div class="content-container wrapper-padding-top" id="page0">
+          <span class="desc-big font-white">내 탁구시합 기록,</span>
+          <span class="desc-big font-white">모아서 한번에 보고싶을 때</span>
+        </div>
+      </div>
+    </div>
+    <div class="section-container">
+      <div class="wrapper-padding-side flex-row">
+        <div class="content-container wrapper-padding-top" id="page1">
+          <span class="desc-big font-white">친구들의 탁구시합</span>
+          <span class="desc-big font-white">결과가 궁금할 때</span>
+        </div>
+      </div>
+    </div>
+    <div class="section-container">
+      <div class="wrapper-padding-side flex-row">
+        <div class="content-container wrapper-padding-top" id="page2">
+          <span class="desc-big font-white">내 탁구 실력</span>
+          <span class="desc-big font-white">순위가 알고싶을 때</span>
+        </div>
+      </div>
+    </div>
+    <div class="section-container">
+      <div class="wrapper-padding-side flex-row">
+        <div class="content-container wrapper-padding-top" id="page3">
+          <span class="desc-big font-white">핑앤퐁 다운로드</span>
+          <img
+            src="/images/google_play_logo.png"
+            width="40%"
+            height="30%"
+            class="store-button"
+            onclick="location.href = 'https://play.google.com/store/apps/details?id=com.mj.pingnpong'"
+          />
+          <img
+            src="/images/app_store_logo.png"
+            width="40%"
+            height="30%"
+            class="store-button"
+            onclick="location.href = 'https://apps.apple.com/us/app/%ED%95%91%EC%95%A4%ED%90%81/id1579322143'"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="app_download_container" id="app_download_container">
+      <span class="desc-middle">핑앤퐁</span>
+      <span class="desc-middle">다운로드</span>
+    </div>
+    <div class="image-section">
+      <img src="/images/empty.png" class="image-screen image-visible" />
+      <img
+        src="/images/analysisScreen.png"
+        class="image-screen image-visible"
+        id="image0"
+      />
+      <img src="/images/feedScreen.png" class="image-screen" id="image1" />
+      <img src="/images/rankingScreen.png" class="image-screen" id="image2" />
+    </div>
+  </body>
+</html>
+
+<script>
+  let innerHeight = window.innerHeight;
+  window.addEventListener("resize", () => {
+    innerHeight = window.innerHeight;
+  });
+  window.addEventListener("scroll", () => {
+    let firstPageColor = { r: 138, g: 0, b: 255 };
+    let secondPageColor = { r: 30, g: 144, b: 255 };
+    let thirdPageColor = { r: 11, g: 139, b: 15 };
+    let fourthPageColor = { r: 169, g: 85, b: 60 };
+    let colors = [
+      firstPageColor,
+      secondPageColor,
+      thirdPageColor,
+      fourthPageColor,
+    ];
+
+    let y = 1 + (window.scrollY || window.pageYOffset);
+    let page = Math.floor(y / innerHeight);
+    let diff = y % innerHeight;
+    let gradientLength = innerHeight / 2;
+    let textFadeLength = 70;
+    let imageFadeLength = innerHeight / 2;
+    if (diff > innerHeight - gradientLength && page < colors.length - 1) {
+      let w = (innerHeight - diff) / gradientLength;
+      let r = colors[page + 1].r * (1 - w) + colors[page].r * w;
+      let g = colors[page + 1].g * (1 - w) + colors[page].g * w;
+      let b = colors[page + 1].b * (1 - w) + colors[page].b * w;
+      document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+      document.getElementById(
+        "app_download_container"
+      ).style.color = `rgb(${r}, ${g}, ${b})`;
+    }
+    if (diff < textFadeLength) {
+      document.getElementById(`page${page}`).style.opacity =
+        1 - diff / textFadeLength;
+      if (page < colors.length - 1) {
+        document.getElementById(`page${page + 1}`).style.opacity = 1;
+      }
+    }
+    if (diff > innerHeight - textFadeLength && page < colors.length - 1) {
+      for (let i = 0; i < colors.length - 1; i++) {
+        if (i === page) {
+          document.getElementById(`image${i}`).style.opacity =
+            (innerHeight - diff) / innerHeight;
+        } else if (i === page + 1) {
+          document.getElementById(`image${i}`).style.opacity =
+            1 - (innerHeight - diff) / innerHeight;
+        } else {
+          document.getElementById(`image${i}`).style.opacity = 0;
+        }
+      }
+    }
+  });
+</script>
