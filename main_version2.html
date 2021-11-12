@@ -275,7 +275,7 @@
           <img
             src="images/pingnpong_white_background.png"
             class="logo"
-            onclick="location.href = 'https://pingnpong.page.link/4vDS'"
+            onclick="goDownload()"
           />
           <span class="desc-big font-white">핑앤퐁 다운로드</span>
           <img
@@ -323,12 +323,11 @@
       let b = colors[page + 1].b * (1 - w) + colors[page].b * w;
       document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
     }
-    // if (diff <= textFadeLength) {
-    //   document.getElementById(`page${page}`).style.opacity =
-    //     1 - diff / textFadeLength;
-    //   if (page < colors.length - 1) {
-    //     document.getElementById(`page${page + 1}`).style.opacity = 1;
-    //   }
-    // }
   });
+  function goDownload() {
+    let innerWidth = window.innerWidth;
+    if (innerWidth <= 780) {
+      location.href = "https://pingnpong.page.link/4vDS";
+    }
+  }
 </script>
