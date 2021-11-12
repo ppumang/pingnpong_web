@@ -73,12 +73,22 @@
     .store-button {
       cursor: pointer;
       box-shadow: mintcream;
-      border-radius: 10px;
+      border-radius: 15px;
       background-color: #fff;
       margin: 5px;
+      height: 15%;
     }
     .store-button:hover {
       box-shadow: 0 0 10px 2px;
+    }
+    .fullHeight {
+      height: 100vh;
+    }
+    .align-center {
+      align-items: center;
+    }
+    .width100 {
+      width: 100%;
     }
 
     @media screen and (min-width: 780px) {
@@ -96,19 +106,32 @@
         display: none;
       }
       .section-container {
+        display: flex;
         width: 100%;
         height: 100vh;
+        justify-content: center;
       }
-      .wrapper-padding-side {
-        padding-right: 20%;
-        padding-left: 20%;
+      .wrapper {
+        width: 1000px;
+        height: 100vh;
+        max-width: 1000px;
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
       }
       .wrapper-padding-top {
         padding-top: 20%;
       }
+      .wrapper-margin-right {
+        margin-right: 15px;
+      }
       .content-container {
         display: flex;
         flex-direction: column;
+        padding-top: 20%;
+        margin-right: 15px;
       }
       .desc-big {
         font-size: 35px;
@@ -125,24 +148,87 @@
         font-family: monospace;
         font-weight: bold;
       }
-      .image-screen {
-        position: fixed;
-        right: 20%;
-        top: 5vh;
-        height: 90vh;
-        opacity: 0;
-      }
       .image-visible {
         opacity: 1;
+      }
+      .image-size {
+        height: 90vh;
+      }
+      .logo {
+        height: 25vh;
+        width: 23vh;
+      }
+
+      .justify-center {
+        justify-content: center;
       }
     }
     @media screen and (max-width: 780px) {
       body {
-        padding-left: 5%;
-        padding-right: 5%;
+        padding: 0;
+        margin: 0;
       }
       .logo-container {
-        text-align: left;
+        text-align: center;
+        position: fixed;
+        left: 20%;
+        top: 0;
+      }
+      .app_download_container {
+        display: none;
+      }
+      .section-container {
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+      }
+      .wrapper {
+        width: 1000px;
+        height: 100vh;
+        max-width: 1000px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+      .content-container {
+        display: flex;
+        flex-direction: column;
+        padding-top: 20%;
+      }
+      .desc-big {
+        font-size: 25px;
+        line-height: 5rem;
+        font-family: monospace;
+        font-weight: bold;
+      }
+      .font-white {
+        color: #fff;
+      }
+      .desc-middle {
+        font-size: 25px;
+        line-height: 3rem;
+        font-family: monospace;
+        font-weight: bold;
+      }
+      .image-visible {
+        opacity: 1;
+      }
+      .image-size {
+        height: 50vh;
+      }
+      .logo {
+        height: 25vh;
+        width: 23vh;
+      }
+      .store-button {
+        display: none;
+      }
+
+      .justify-center {
+        justify-content: center;
       }
     }
   </style>
@@ -151,63 +237,59 @@
       <img src="/images/logo_with_text.png" />
     </div>
     <div class="section-container">
-      <div class="wrapper-padding-side flex-row space-between">
-        <div class="content-container wrapper-padding-top" id="page0">
+      <div class="wrapper">
+        <div class="content-container" id="page0">
           <span class="desc-big font-white">내 탁구시합 기록,</span>
           <span class="desc-big font-white">모아서 한번에 보고싶을 때</span>
         </div>
+        <div class="flex-row align-center">
+          <img src="images/analysisScreen.png" class="image-size" />
+        </div>
       </div>
     </div>
     <div class="section-container">
-      <div class="wrapper-padding-side flex-row">
-        <div class="content-container wrapper-padding-top" id="page1">
+      <div class="wrapper">
+        <div class="content-container" id="page1">
           <span class="desc-big font-white">친구들의 탁구시합</span>
           <span class="desc-big font-white">결과가 궁금할 때</span>
         </div>
-      </div>
-    </div>
-    <div class="section-container">
-      <div class="wrapper-padding-side flex-row">
-        <div class="content-container wrapper-padding-top" id="page2">
-          <span class="desc-big font-white">내 탁구 실력</span>
-          <span class="desc-big font-white">순위가 알고싶을 때</span>
+        <div class="flex-row align-center">
+          <img src="images/feedScreen.png" class="image-size" />
         </div>
       </div>
     </div>
     <div class="section-container">
-      <div class="wrapper-padding-side flex-row">
-        <div class="content-container wrapper-padding-top" id="page3">
+      <div class="wrapper">
+        <div class="content-container" id="page2">
+          <span class="desc-big font-white">내 탁구 실력</span>
+          <span class="desc-big font-white">순위가 알고싶을 때</span>
+        </div>
+        <div class="flex-row align-center">
+          <img src="images/rankingScreen.png" class="image-size" />
+        </div>
+      </div>
+    </div>
+    <div class="section-container">
+      <div class="wrapper justify-center">
+        <div class="content-container align-center" id="page3">
+          <img
+            src="images/pingnpong_white_background.png"
+            class="logo"
+            onclick="location.href = 'https://pingnpong.page.link/4vDS'"
+          />
           <span class="desc-big font-white">핑앤퐁 다운로드</span>
           <img
             src="/images/google_play_logo.png"
-            width="40%"
-            height="30%"
             class="store-button"
             onclick="location.href = 'https://play.google.com/store/apps/details?id=com.mj.pingnpong'"
           />
           <img
             src="/images/app_store_logo.png"
-            width="40%"
-            height="30%"
             class="store-button"
             onclick="location.href = 'https://apps.apple.com/us/app/%ED%95%91%EC%95%A4%ED%90%81/id1579322143'"
           />
         </div>
       </div>
-    </div>
-    <div class="app_download_container" id="app_download_container">
-      <span class="desc-middle">핑앤퐁</span>
-      <span class="desc-middle">다운로드</span>
-    </div>
-    <div class="image-section">
-      <img src="/images/empty.png" class="image-screen image-visible" />
-      <img
-        src="/images/analysisScreen.png"
-        class="image-screen image-visible"
-        id="image0"
-      />
-      <img src="/images/feedScreen.png" class="image-screen" id="image1" />
-      <img src="/images/rankingScreen.png" class="image-screen" id="image2" />
     </div>
   </body>
 </html>
@@ -226,44 +308,27 @@
       firstPageColor,
       secondPageColor,
       thirdPageColor,
-      fourthPageColor,
+      firstPageColor,
     ];
 
-    let y = 1 + (window.scrollY || window.pageYOffset);
+    let y = window.scrollY || window.pageYOffset;
     let page = Math.floor(y / innerHeight);
     let diff = y % innerHeight;
     let gradientLength = innerHeight / 2;
     let textFadeLength = 70;
-    let imageFadeLength = innerHeight / 2;
-    if (diff > innerHeight - gradientLength && page < colors.length - 1) {
+    if (diff >= innerHeight - gradientLength && page < colors.length - 1) {
       let w = (innerHeight - diff) / gradientLength;
       let r = colors[page + 1].r * (1 - w) + colors[page].r * w;
       let g = colors[page + 1].g * (1 - w) + colors[page].g * w;
       let b = colors[page + 1].b * (1 - w) + colors[page].b * w;
       document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
-      document.getElementById(
-        "app_download_container"
-      ).style.color = `rgb(${r}, ${g}, ${b})`;
     }
-    if (diff < textFadeLength) {
-      document.getElementById(`page${page}`).style.opacity =
-        1 - diff / textFadeLength;
-      if (page < colors.length - 1) {
-        document.getElementById(`page${page + 1}`).style.opacity = 1;
-      }
-    }
-    if (diff > innerHeight - textFadeLength && page < colors.length - 1) {
-      for (let i = 0; i < colors.length - 1; i++) {
-        if (i === page) {
-          document.getElementById(`image${i}`).style.opacity =
-            (innerHeight - diff) / innerHeight;
-        } else if (i === page + 1) {
-          document.getElementById(`image${i}`).style.opacity =
-            1 - (innerHeight - diff) / innerHeight;
-        } else {
-          document.getElementById(`image${i}`).style.opacity = 0;
-        }
-      }
-    }
+    // if (diff <= textFadeLength) {
+    //   document.getElementById(`page${page}`).style.opacity =
+    //     1 - diff / textFadeLength;
+    //   if (page < colors.length - 1) {
+    //     document.getElementById(`page${page + 1}`).style.opacity = 1;
+    //   }
+    // }
   });
 </script>
